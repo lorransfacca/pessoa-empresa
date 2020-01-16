@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+    <section  class="container">
+        <h4>Atualizar Informações</h4>
+    {% if pessoa %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Atualizar pessoa</button>
+    </form>
+    {% endif %}
+    </section>
+{% endblock body %}
+
