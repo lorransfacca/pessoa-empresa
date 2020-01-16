@@ -31,3 +31,10 @@ def login(request):
     return render(request, 'login.html', {'msg': 'Ops, não encontramos'})
 
   return render(request, 'login.html', {'msg': 'seja bem vindo'})
+
+def delete(request):
+  pessoa = Pessoa.objects.all()
+  if pessoa_banco_dados is not None:
+    return deletar_pessoa(request)
+  
+  return render(request,'deletar.html',{'dados': 'Cadastro Deletado!'},args)
