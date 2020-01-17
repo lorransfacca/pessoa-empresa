@@ -22,5 +22,5 @@ urlpatterns = [
     path('', views.mostrar_formulario_cadastro),
     path('login', views.login),
     path('pessoas', views.mostrar_pessoas),
-    path('pessoas', views.delete),
+    path('pessoas/<int:id>', views.delete),
 ]

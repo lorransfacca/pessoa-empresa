@@ -1,17 +1,13 @@
 {% extends "base.html" %}
 {% block body %}
-    <section class="container">
+    <section>
         <h4>Deletar Informações</h4>
     {% if pessoa %}
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">Nome: {{pessoa.nome}}</h5>
-            <p class="card-text">Pessoa Deletada!</p>
-        </div>
+    <div>
+        <h5>Nome: {{pessoa.nome}}</h5>
+        <p>Pessoa Deletada!</p>
     </div>
-    <button type="submit" class="btn btn-primary">Deletar pessoa</button>
-    <input type="button" value="Deletar">
     {% endif %}
     </section>
-{% endblock body %}
+{% endblock %}
 
