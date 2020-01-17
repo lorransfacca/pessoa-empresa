@@ -3,12 +3,10 @@
     <section  class="container">
         <h4>Atualizar Informações</h4>
     {% if pessoa %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Atualizar pessoa</button>
-    </form>
+    <p>Nome: {{pessoa.nome}}</p>
+    <p>CPF: {{pessoa.cpf}}</p>
+    <p>Pessoa Atualizada!</p>
+  </div>
     {% endif %}
     </section>
 {% endblock body %}
-

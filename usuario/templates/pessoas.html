@@ -7,8 +7,8 @@
     <p>CPF: {{pessoa.cpf}}</p>
   </div>
 
-  <input type="button" value="Deletar">
-  <input type="button"value="Atualizar">
+  <a href="/pessoas/{{pessoa.id}}"><input type="button" value="Deletar"></a>
+  <a href="/pessoas/{{pessoa.id}}"><input type="button"value="Atualizar"></a>
   
   <hr>
 {% endfor %}

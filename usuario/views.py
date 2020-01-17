@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Pessoa
+from usuario import views
 
 def mostrar_formulario_cadastro(request):
   args = {'msg': ''}
@@ -31,3 +32,22 @@ def login(request):
     return render(request, 'login.html', {'msg': 'Ops, não encontramos'})
 
   return render(request, 'login.html', {'msg': 'seja bem vindo'})
+
+def delete(request, id):
+  pessoa = Pessoa.objects.get(id=id)
+  args = {
+    'pessoa': pessoa
+  }
+
+  pessoa.delete()
+  return render(request,'deletar.html', args)
+
+def atualizar(request,id):
+  pessoa = Pessoa.objects.get(id=id)
+  form = PessoaForm.get(id=id)
+  args = {
+    'pessoa': pessoa,
+  }
+
+  pessoa.atualizar()
+  return render(request,'atualizar.html',args)
